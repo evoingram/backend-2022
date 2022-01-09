@@ -7,7 +7,7 @@
     "server": "nodemon",
     "start": "node index.js",
     "test": "cross-env DB_ENV=testing jest",
-    "lint:js": "eslint . --ext .js",
+    "lint:js": "npx eslint . --ext .js",
     "lint:js:fix": "npm run lint:js --fix",
     "test:related": "jest --bail --findRelatedTests",
     "prepare": "husky install",

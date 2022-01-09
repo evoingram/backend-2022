@@ -2,7 +2,7 @@ name: pull-request
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,4 +11,3 @@ jobs:
         run: npm run lint:js:fix
       - name: run unit tests 
         run: npm run test
-        

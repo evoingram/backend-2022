@@ -9,7 +9,8 @@
     "test": "cross-env DB_ENV=testing jest --watch",
     "lint:js": "eslint . --ext .js",
     "lint:js:fix": "npm run lint:js -- --fix",
-    "test:related": "jest --bail --findRelatedTests"
+    "test:related": "jest --bail --findRelatedTests",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",

@@ -8,13 +8,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: run ESLint
       - uses: stefanoeb/eslint-action@1.0.2
-      - name: run linter
+      - name: lint files
         run: npm run lint:js:fix
   testing:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: run Jest
+      - uses: stefanoeb/jest-action@1.0.3
       - name: run unit tests 
         run: npm run test
   build:

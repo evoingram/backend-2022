@@ -6,11 +6,12 @@
   "scripts": {
     "server": "nodemon",
     "start": "node index.js",
-    "test": "cross-env DB_ENV=testing jest --watch",
+    "test": "cross-env DB_ENV=testing jest",
     "lint:js": "eslint . --ext .js",
     "lint:js:fix": "npm run lint:js -- --fix",
     "test:related": "jest --bail --findRelatedTests",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "precommit": "npm run test && npm run lint:js:fix"
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,6 @@
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
-    "eslint": "^8.6.0",
     "express": "^4.17.2",
     "helmet": "^5.0.1",
     "jsonwebtoken": "^8.5.1",
@@ -37,6 +37,11 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0",
     "husky": "^7.0.0",
     "jest": "^27.4.7",
     "lint-staged": "^12.1.7",
@@ -45,7 +50,8 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": [
-      "eslint . --fix", "git add"
+      "eslint . --fix",
+      "git add"
     ]
   },
   "husky": {

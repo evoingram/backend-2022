@@ -8,7 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: run ESLint
       - uses: stefanoeb/eslint-action@1.0.2
       - name: lint files
         run: npm run lint:js:fix
@@ -19,6 +18,8 @@ jobs:
       - uses: stefanoeb/jest-action@1.0.3
       - name: run unit tests 
         run: npm run test
+        with:
+          DB_ENV: testing
   build:
     runs-on: ubuntu-latest
     steps:
@@ -26,7 +27,5 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "erica-cicd-testing"
-          heroku_email: "evoingram@aquoco.onmicrosoft.com"
-
-        
+          heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
+          heroku_email: ${{secrets.HEROKU_EMAIL}}

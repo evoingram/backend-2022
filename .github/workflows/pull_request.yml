@@ -2,12 +2,12 @@ name: pull-request
 
 on:
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: run eslint
+      - name: run linter
         run: npm run lint:js:fix
-      - name: Run tests 
+      - name: run unit tests 
         run: npm run test

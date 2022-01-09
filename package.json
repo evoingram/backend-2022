@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon",  
+    "server": "nodemon",
     "start": "node index.js",
-    "test": "cross-env DB_ENV=testing jest --watch"
+    "test": "cross-env DB_ENV=testing jest --watch",
+    "lint:js": "eslint . --ext .js",
+    "lint:js:fix": "npm run lint:js -- --fix",
+    "test:related": "jest --bail --findRelatedTests"
   },
   "repository": {
     "type": "git",
@@ -23,6 +26,7 @@
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
+    "eslint": "^8.6.0",
     "express": "^4.17.2",
     "helmet": "^5.0.1",
     "jsonwebtoken": "^8.5.1",
@@ -32,7 +36,9 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
+    "husky": "^7.0.4",
     "jest": "^27.4.7",
+    "lint-staged": "^12.1.7",
     "nodemon": "^2.0.15",
     "supertest": "^6.1.6"
   }

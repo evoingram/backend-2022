@@ -14,7 +14,6 @@ jobs:
   testing:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - name: run unit tests 
         run: npm run test
   build:

@@ -8,7 +8,7 @@
     "start": "node index.js",
     "test": "cross-env DB_ENV=testing jest",
     "lint:js": "eslint . --ext .js",
-    "lint:js:fix": "npm run lint:js -- --fix",
+    "lint:js:fix": "npm run lint:js --fix",
     "test:related": "jest --bail --findRelatedTests",
     "prepare": "husky install",
     "precommit": "npm run test && npm run lint:js:fix"

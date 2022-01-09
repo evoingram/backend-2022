@@ -37,15 +37,20 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
-    "husky": "^7.0.4",
+    "husky": "^7.0.0",
     "jest": "^27.4.7",
     "lint-staged": "^12.1.7",
     "nodemon": "^2.0.15",
     "supertest": "^6.1.6"
   },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "eslint . --fix", "git add"
+    ]
+  },
   "husky": {
     "hooks": {
-        "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged"
     }
   }
 }

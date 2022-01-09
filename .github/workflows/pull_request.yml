@@ -18,6 +18,8 @@ jobs:
       - uses: stefanoeb/jest-action@1.0.3
       - name: run unit tests 
         run: npm run test
+        with:
+          DB_ENV: testing
   build:
     runs-on: ubuntu-latest
     steps:

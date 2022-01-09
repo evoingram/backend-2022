@@ -42,5 +42,10 @@
     "lint-staged": "^12.1.7",
     "nodemon": "^2.0.15",
     "supertest": "^6.1.6"
+  },
+  "husky": {
+    "hooks": {
+        "pre-commit": "lint-staged"
+    }
   }
 }

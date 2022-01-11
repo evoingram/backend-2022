@@ -4,6 +4,14 @@ on:
   pull_request:
     branches: [ master ]
 jobs:
+  conventional:
+    name: Conventional PR
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lint pull request title
+        uses: jef/conventional-commits-pr-action@v1
+        with:
+          token: ${{secrets.GITHUB_TOKEN}}
   lint-check:
     runs-on: ubuntu-latest
     steps:
@@ -27,11 +35,3 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
           heroku_email: ${{secrets.HEROKU_EMAIL}}
-  conventional:
-    name: Conventional PR
-    runs-on: ubuntu-latest
-    steps:
-      - name: Lint pull request title
-        uses: jef/conventional-commits-pr-action@v1
-        with:
-          token: ${{secrets.GITHUB_TOKEN}}

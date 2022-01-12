@@ -39,6 +39,10 @@ jobs:
     name: Jest Code Coverage
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
+      - run: yarn install
+      - name: Run Tests
+        run: yarn jest --coverage --json --outputFile=/home/runner/work/_actions/mattallty/jest-github-action/v1/dist/jest.results.json
       - name: Jest Code Coverage GitHub Action
         uses: mattallty/jest-github-action@v1
         env:
@@ -46,5 +50,4 @@ jobs:
         with:
           changes-only: false
           coverage-comment: true
-          test-command: "npm run test"
-          working-directory: "API"
+          test-command: "echo done"

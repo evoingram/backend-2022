@@ -45,3 +45,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           changes-only: false
+          coverage-comment: true
+          test-command: "npm run test"
